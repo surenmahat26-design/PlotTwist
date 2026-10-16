@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #101018;
+    --card-bg: #1D1D2B;
+    --card-hover: #252538;
+    --card-border: #2C2C40;
+    --accent: #9B7BFF;
+    --accent-hover: #8A64FF;
+    --accent-glow: rgba(155, 123, 255, 0.25);
+    --text-primary: #F4F4F8;
+    --text-secondary: #9E9EB6;
+    --text-muted: #6C6C82;
+  }
+
+  body {
+    background-color: #101018;
+    color: #F4F4F8;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #101018;
+}
+::-webkit-scrollbar-thumb {
+  background: #2C2C40;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3E3E58;
+}
+
+/* Subtle glow animations */
+.glow-purple {
+  box-shadow: 0 0 20px -3px rgba(155, 123, 255, 0.25);
+}
+
+.glow-purple-lg {
+  box-shadow: 0 0 35px -5px rgba(155, 123, 255, 0.35);
+}
+
+/* Shimmer animation for skeleton loaders */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #1D1D2B 25%, #28283C 50%, #1D1D2B 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
